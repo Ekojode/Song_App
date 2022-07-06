@@ -9,12 +9,13 @@ class SongGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height -
+    /* double height = MediaQuery.of(context).size.height -
         AppBar().preferredSize.height -
         MediaQuery.of(context).padding.top;
-    double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;*/
     return ListView.builder(
         scrollDirection: Axis.horizontal,
+        physics: const BouncingScrollPhysics(),
         itemCount: songs.length,
         itemBuilder: (context, index) {
           return Row(
@@ -23,10 +24,10 @@ class SongGrid extends StatelessWidget {
                   songTitle: songs[index].songTitle,
                   artisteTitle: songs[index].artisteName,
                   songImageUrl: songs[index].songImage,
-                  height: height * 0.3,
-                  width: width * 0.5),
+                  height: 190,
+                  width: 190),
               const SizedBox(
-                width: 10,
+                width: 7,
               )
             ],
           );

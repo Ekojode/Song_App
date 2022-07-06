@@ -21,12 +21,37 @@ class SongCard extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Card(
-          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+            side: BorderSide(
+              color: Colors.grey.withOpacity(0.2),
+              width: 1,
+            ),
+          ),
+          //    elevation: 5,
           shadowColor: Colors.black38,
           child: Container(
+            //margin: const EdgeInsets.all(10),
             height: height,
             width: width,
             decoration: BoxDecoration(
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black38,
+                  offset: Offset(
+                    5.0,
+                    5.0,
+                  ),
+                  blurRadius: 10.0,
+                  spreadRadius: 2.0,
+                ), //BoxShadow
+                BoxShadow(
+                  color: Colors.white,
+                  offset: Offset(0.0, 0.0),
+                  blurRadius: 0.0,
+                  spreadRadius: 0.0,
+                ),
+              ],
               borderRadius: BorderRadius.circular(15),
             ),
             child: ClipRRect(
@@ -41,14 +66,12 @@ class SongCard extends StatelessWidget {
         ),
         Text(songTitle,
             style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.black,
-                fontSize: 14)),
+                fontWeight: FontWeight.bold,
+                color: Color(0xff091127),
+                fontSize: 18)),
         Text(artisteTitle,
             style: const TextStyle(
-                fontWeight: FontWeight.w300,
-                color: Colors.black,
-                fontSize: 12)),
+                fontWeight: FontWeight.w400, color: Colors.grey, fontSize: 14)),
       ],
     );
   }
