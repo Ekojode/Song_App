@@ -18,16 +18,37 @@ class SongCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Card(
           elevation: 2,
           shadowColor: Colors.black38,
           child: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+            height: height,
+            width: width,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.network(
+                songImageUrl,
+                //   scale: 1.5,
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
         ),
-        Text(songTitle),
-        Text(artisteTitle),
+        Text(songTitle,
+            style: const TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Colors.black,
+                fontSize: 14)),
+        Text(artisteTitle,
+            style: const TextStyle(
+                fontWeight: FontWeight.w300,
+                color: Colors.black,
+                fontSize: 12)),
       ],
     );
   }

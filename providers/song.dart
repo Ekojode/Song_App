@@ -13,7 +13,23 @@ class Song {
 }
 
 class Songs with ChangeNotifier {
-  final List<Song> _songs = [];
+  final List<Song> _songs = [
+    Song(
+        songTitle: "ojuelegba",
+        songImage:
+            "https://www.ngwide.net/wp-content/uploads/2016/03/wizkid-ojuelegba-remix.jpg",
+        artisteName: "Wizkid"),
+    Song(
+        songTitle: "ojuelegba",
+        songImage:
+            "https://www.ngwide.net/wp-content/uploads/2016/03/wizkid-ojuelegba-remix.jpg",
+        artisteName: "Wizkid"),
+    Song(
+        songTitle: "ojuelegba",
+        songImage:
+            "https://www.ngwide.net/wp-content/uploads/2016/03/wizkid-ojuelegba-remix.jpg",
+        artisteName: "Wizkid"),
+  ];
 
   List<Song> get songs {
     return _songs;
