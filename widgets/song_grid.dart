@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_app/screens/song_screen.dart';
 
 import './song_card.dart';
 import '../providers/song.dart';
@@ -21,11 +22,16 @@ class SongGrid extends StatelessWidget {
           return Row(
             children: [
               SongCard(
-                  songTitle: songs[index].songTitle,
-                  artisteTitle: songs[index].artisteName,
-                  songImageUrl: songs[index].songImage,
-                  height: 190,
-                  width: 190),
+                songTitle: songs[index].songTitle,
+                artisteTitle: songs[index].artisteName,
+                songImageUrl: songs[index].songImageUrl,
+                height: 190,
+                width: 190,
+                onTap: () {
+                  Navigator.pushNamed(context, SongScreen.routeName,
+                      arguments: songs[index].id);
+                },
+              ),
               const SizedBox(
                 width: 7,
               )

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/screens/song_screen.dart';
 //import 'package:todo_app/screens/container.dart';
 
 import './screens/home_screen.dart';
@@ -17,15 +18,17 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [ChangeNotifierProvider<Songs>(create: (_) => Songs())],
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-            appBarTheme: const AppBarTheme(
-          foregroundColor: Colors.black,
-          backgroundColor: Colors.white,
-        )),
-        home: const Home(),
-      ),
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+              appBarTheme: const AppBarTheme(
+            foregroundColor: Colors.black,
+            backgroundColor: Colors.white,
+          )),
+          home: const Home(),
+          routes: {
+            SongScreen.routeName: (context) => const SongScreen(),
+          }),
     );
   }
 }
