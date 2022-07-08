@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/screens/container.dart';
 
 import '../widgets/text_title.dart';
 import '../widgets/app_drawer.dart';
-import '../widgets/song_card.dart';
 import '../widgets/song_grid.dart';
 import '../providers/song.dart';
 
@@ -12,7 +12,8 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<Song> songs = Provider.of<Songs>(context).songs;
+    final songProvider = Provider.of<Songs>(context);
+    List<Song> songs = songProvider.songs;
     return Scaffold(
       appBar: AppBar(),
       drawer: const AppDrawer(),
@@ -32,13 +33,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-
-/*  const SongCard(
-              artisteTitle: 'drake',
-              songImageUrl:
-                  "https://www.udiscovermusic.com/wp-content/uploads/2018/09/Drake-Nothing-Was-The-Same-deluxe-album-cover-web-optimised-820.jpg",
-              height: 190,
-              width: 190,
-              songTitle: "Beatles",
-            ),*/
