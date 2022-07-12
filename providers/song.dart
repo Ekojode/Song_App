@@ -9,6 +9,7 @@ class Song {
   final String songImageUrl;
   final String songAudioUrl;
   final String id;
+  final bool isFavourite;
 
   Song({
     required this.id,
@@ -16,6 +17,7 @@ class Song {
     required this.songImageUrl,
     required this.artisteName,
     required this.songAudioUrl,
+    this.isFavourite = false,
   });
 }
 
