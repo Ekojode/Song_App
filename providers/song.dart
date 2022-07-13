@@ -51,12 +51,6 @@ class Songs with ChangeNotifier {
             "https://www.udiscovermusic.com/wp-content/uploads/2018/09/Drake-Nothing-Was-The-Same-deluxe-album-cover-web-optimised-820.jpg",
         artisteName: "Drake",
         songAudioUrl: ''),
-    /*    Song(id: "s5", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl),
-        Song(id: "s6", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl),
-        Song(id: "s7", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl),
-        Song(id: "s8", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl),
-        Song(id: "s9", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl),
-        Song(id: "s10", songTitle: songTitle, songImageUrl: songImageUrl, artisteName: artisteName, songAudioUrl: songAudioUrl)*/
   ];
 
   List<Song> get songs {
@@ -70,17 +64,4 @@ class Songs with ChangeNotifier {
 
   final String clientlId = "dde284aca61e44898bd1f096bd2f7b62";
   final String clientSecret = "6306d1f88c14463794c72ea2b8d6b8bc";
-
-  /* Future<void> fetchTrack() async {
-    final url = Uri.parse('https://spotify23.p.rapidapi.com/tracks/');
-
-    //  final param = {ids: '4WNcduiCmDNfmTEz7JvmLv'};
-
-    final response = await http.get(url, headers: {
-      'X-RapidAPI-Key': '0b6cb3574cmsh05a61de8fc20b13p1cdaaejsn5d9e78872ed1',
-      'X-RapidAPI-Host': 'spotify23.p.rapidapi.com'
-    });
-
-    print(response.body);
-  }*/
 }

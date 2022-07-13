@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:audioplayers/audioplayers.dart";
+
 import 'package:provider/provider.dart';
 
 import '../providers/song.dart';
@@ -14,45 +14,10 @@ class SongScreen extends StatefulWidget {
 }
 
 class _SongScreenState extends State<SongScreen> with WidgetsBindingObserver {
-  final _songPlayer = AudioPlayer();
-  final songUrl = UrlSource(
-      "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3");
-  bool _isPlaying = false;
   Duration duration = Duration.zero;
   Duration position = Duration.zero;
 
   final urls = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3";
-
-  @override
-  void initState() {
-    _songPlayer.onPlayerStateChanged.listen((state) {
-      setState(() {
-        _isPlaying = state == PlayerState.playing;
-      });
-    });
-    _songPlayer.onDurationChanged.listen((newDuration) {
-      setState(() {
-        duration = newDuration;
-      });
-    });
-    //  _songPlayer.setSourceUrl(urls);
-    _songPlayer.onPositionChanged.listen((event) {
-      setState(() {
-        position = event;
-      });
-    });
-    super.initState();
-  }
-
-  /*@override
-  void initState() {
-    ambiguate(WidgetsBinding.instance)!.addObserver(this);
-    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-      statusBarColor: Colors.black,
-    ));
-    _init();
-    super.initState();
-  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -134,29 +99,6 @@ class _SongScreenState extends State<SongScreen> with WidgetsBindingObserver {
                   ],
                 ),
               ),
-              CircleAvatar(
-                radius: 35,
-                child: IconButton(
-                  icon: Icon(
-                    _isPlaying ? Icons.pause : Icons.play_arrow,
-                  ),
-                  iconSize: 50,
-                  onPressed: () async {
-                    if (_isPlaying) {
-                      await _songPlayer.pause();
-                      setState(() {
-                        _isPlaying = false;
-                      });
-                    } else {
-                      await _songPlayer.play(songUrl);
-                      setState(() {
-                        _isPlaying = true;
-                      });
-                      //      "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3");
-                    }
-                  },
-                ),
-              )
             ],
           ),
         ),

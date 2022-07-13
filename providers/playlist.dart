@@ -4,9 +4,10 @@ import './song.dart';
 
 class PlayList {
   final String title;
-  final List<Song> songs;
+  final String imgUrl;
+  List<Song> songs;
 
-  PlayList({required this.title, required this.songs});
+  PlayList({required this.title, this.imgUrl = "", required this.songs});
 }
 
 class PlayLists with ChangeNotifier {
